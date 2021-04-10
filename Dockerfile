@@ -1,6 +1,6 @@
 ARG RUBY_VER=2.5.3
 
-FROM node:14.15.4-buster as node
+FROM node:12.22.1-buster-slim as node
 
 FROM ruby:${RUBY_VER} as base
 
