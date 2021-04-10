@@ -1,0 +1,83 @@
+* tech-rails
+
+tech-rails is container for reviews of student's repository.
+tech-rails has only 3 processes.
+
+- pull image from dockerhub or clone this repository and build image with docker.
+- docker run with inserting student's repository url in environment variable 'GIT_URL'.
+- you check it and execute exit in you terminal, so this container is vanished!
+
+No other preparation required.
+
+** install or build
+
+you only install usually.
+this version is ruby version in container.
+
+*** install
+
+**** 2.5.3
+#+begin_src bash
+docker pull phyten/tech-rails:2.5.3
+#+end_src
+
+**** 2.6.3
+#+begin_src bash
+docker pull phyten/tech-rails:2.5.3
+#+end_src
+
+
+*** build
+
+**** 2.5.3
+#+begin_src bash
+docker build -t phyten/tech-rails:2.5.3 --build-arg RUBY_VER=2.5.3 .
+#+end_src
+
+**** 2.6.3
+#+begin_src bash
+docker build -t phyten/tech-rails:2.6.3 --build-arg RUBY_VER=2.6.3 .
+#+end_src
+
+** usage
+
+in 2.5.3
+
+*** docker run
+#+begin_src bash
+docker run --rm -it --name rails-container -p 3000:3000 -v ~/.ssh:/root/.ssh -e GIT_URL=git@github.com:students_name/students_repo phyten/tech-rails:2.5.3 bash~
+#+end_src
+
+so,
+
+- clone the repository,
+- bundle install(rapidly because of gems required in container)
+- mysql starts and dbuser(dbpass) is made.
+
+write in entrypoint.sh
+
+*** db
+#+begin_src
+rails db:create
+rails db:migrate
+#+end_src
+
+*** check
+#+begin_src
+rails s -p 3000 -b 0.0.0.0
+#+end_src
+
+*** browse
+check in your browser
+
+~http://localhost:3000~
+
+
+*** console(optional)
+launch another terminal and,
+
+#+begin_src
+docker exec -it rails-container rails c
+#+end_src
+
+you must ~exec~ , not ~run~ .
