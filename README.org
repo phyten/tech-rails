@@ -23,7 +23,7 @@ docker pull phyten/tech-rails:2.5.3
 
 **** 2.6.3
 #+begin_src bash
-docker pull phyten/tech-rails:2.5.3
+docker pull phyten/tech-rails:2.6.3
 #+end_src
 
 
