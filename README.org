@@ -45,7 +45,7 @@ in 2.5.3
 
 *** docker run
 #+begin_src bash
-docker run --rm -it --name rails-container -p 3000:3000 -v ~/.ssh:/root/.ssh -e GIT_URL=git@github.com:students_name/students_repo phyten/tech-rails:2.5.3 bash~
+docker run --rm -it --name rails-container -p 3000:3000 -v ~/.ssh:/root/.ssh -e GIT_URL=git@github.com:students_name/students_repo phyten/tech-rails:2.5.3 bash
 #+end_src
 
 so,
