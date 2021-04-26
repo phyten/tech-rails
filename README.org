@@ -4,7 +4,7 @@ tech-rails is container for reviews of student's repository.
 tech-rails has only 3 processes.
 
 - pull image from dockerhub or clone this repository and build image with docker.
-- docker run with inserting student's repository url in environment variable 'GIT_URL'.
+- docker run with inserting student's repository url in environment variable 'GIT_URL' .
 - you check it and execute exit in you terminal, so this container is vanished!
 
 No other preparation required.
@@ -12,9 +12,9 @@ No other preparation required.
 ** install or build
 
 you only install usually.
-this version is ruby version in container.
+each of versions per docker image is ruby version in container.
 
-*** install
+*** install(recommended)
 
 **** 2.5.3
 #+begin_src bash
